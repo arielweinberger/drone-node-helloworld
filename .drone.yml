@@ -1,0 +1,10 @@
+kind: pipeline
+name: default
+steps:
+- name: build
+  image: alpine:latest
+  commands:
+  - echo "Commit $$DRONE_COMMIT_SHA"
+  - echo -n "$$version" > .tags
+  - echo "Tags:"
+  - cat .tags
